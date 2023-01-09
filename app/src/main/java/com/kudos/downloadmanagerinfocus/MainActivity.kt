@@ -5,6 +5,14 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import androidx.appcompat.app.AppCompatActivity
+import com.kudos.downloadmanagerinfocus.Constants.MUSIC_URL
+import com.kudos.downloadmanagerinfocus.Constants.PDF_URL
+import com.kudos.downloadmanagerinfocus.Constants.PHOTO_URL
+import com.kudos.downloadmanagerinfocus.Constants.TYPE_MUSIC
+import com.kudos.downloadmanagerinfocus.Constants.TYPE_PDF
+import com.kudos.downloadmanagerinfocus.Constants.TYPE_PHOTO
+import com.kudos.downloadmanagerinfocus.Constants.TYPE_VIDEO
+import com.kudos.downloadmanagerinfocus.Constants.VIDEO_URL
 import com.kudos.downloadmanagerinfocus.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -20,23 +28,23 @@ class MainActivity : AppCompatActivity() {
 
             downloadPhotoButton.setOnClickListener {
                 startDownload(
-                    "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png",
-                    "Photo"
+                    PHOTO_URL,
+                    TYPE_PHOTO
                 )
             }
             downloadVideoButton.setOnClickListener {
                 startDownload(
-                    "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-                    "Video"
+                    VIDEO_URL,
+                    TYPE_VIDEO
                 )
             }
             downloadPdfButton.setOnClickListener {
-                startDownload("https://clickdimensions.com/links/TestPDFfile.pdf", "PDF")
+                startDownload(PDF_URL, TYPE_PDF)
             }
             downloadMusicButton.setOnClickListener {
                 startDownload(
-                    "https://www.kozco.com/tech/LRMonoPhase4.mp3",
-                    "Music"
+                    MUSIC_URL,
+                    TYPE_MUSIC
                 )
             }
 
